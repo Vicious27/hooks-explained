@@ -1,5 +1,6 @@
 import './App.css';
-import Counter from './Counter';
+import UserPoints from "./UserPoints";
+
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
       <header className="App-header">
         <h1 className="title">React Hooks explained</h1>
       </header>
-      <Counter />
+      <UserPoints />
     </>
   )
 };

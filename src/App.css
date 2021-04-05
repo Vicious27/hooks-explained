@@ -34,6 +34,14 @@ input {
   text-align: center;
 }
 
+button {
+  height: 2.2em;
+  border-radius: 1em;
+  border:rgb(41, 105, 177) solid .20em;
+  background-color: rgba(236, 236, 236, 0.884);
+  text-align: center;
+}
+
 h1,h2 {
  margin-top: 12px;
  text-align: center;
