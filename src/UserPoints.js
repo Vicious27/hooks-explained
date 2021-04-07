@@ -1,56 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
-function Heading({ username, points }) {
-  return (
-    <h1>
-      {username} : {points}
-    </h1>
-  );
-}
+export default function Appsus() {
+  const [posts, setPosts] = useState();
+  const url = `https://dev-react-explained-api.pantheonsite.io/wp-json/wp/v2/posts/`;
 
-function Button({ label, onClick }) {
-  return <button onClick={() => onClick()}>{label}</button>
-}
+  const fetchPosts = () => {
+    console.log(`Fetching posts`);
+    fetch(url)
+      .then(response => response.json())
+      .then(posts => {
+        setPosts(posts);
+      })
+      .catch(error => console.error(error));
+  };
 
-function UserPoints() {
-  const [username, setUsername] = useState(null);
-  const [isUsernameSaved, setIsusernameSaved] = useState(false);
-  const [points, setPoints] = useState(0);
+  //Log when posts change
+  useEffect(() => console.log(posts), [posts]);
+
+  //Get posts on initial render and if no posts exists
+  useEffect(() => {
+    fetchPosts();
+  });
+
+  //Fetch posts every 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log(`5 second refresh!`);
+      fetchPosts();
+    }, 5000);
+    return () => clearTimeout(timer);
+  });
 
   return (
     <>
-      {isUsernameSaved ? (
-        <>
-          <Heading username={username} points={points} />
-          <p>
-            <Button label="Add Point" onClick={() => setPoints(points + 1)} />
-            <Button label="Clear Points" onClick={() => setPoints(0)} />
-          </p>
-          <p>
-            <Button
-              label="Edit Username"
-              onClick={() => { setIsusernameSaved(false) }} />
-          </p>
-        </>
-      ) : (
-        <p>
-          <input
-            id="username"
-            onChange={e => setUsername(e.target.value)}
-            placeholder="Username"
-            value={username}
-          />
-          <Button
-            label="Save Username"
-            onClick={() => {
-              setIsusernameSaved(true);
-            }} />
-        </p>
-      )}
+      <ul>
+        {posts.map(post => (
+          <li key={post.id}>{post.title.rendered}</li>
+        ))}
+      </ul>
     </>
   );
 }
-
-
-export default UserPoints;
