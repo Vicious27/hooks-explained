@@ -21,7 +21,7 @@ export default function Appsus() {
   //Get posts on initial render and if no posts exists
   useEffect(() => {
     fetchPosts();
-  });
+  }, []);
 
   //Fetch posts every 5 seconds
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Appsus() {
       fetchPosts();
     }, 5000);
     return () => clearTimeout(timer);
-  });
+  }, []);
 
   return (
     <>
