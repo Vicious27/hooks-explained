@@ -19,8 +19,37 @@ function UserPoints() {
   const [points, setPoints] = useState(0);
 
   return (
-  
-  )
+    <>
+      {isUsernameSaved ? (
+        <>
+          <Heading username={username} points={points} />
+          <p>
+            <Button label="Add Point" onClick={() => setPoints(points + 1)} />
+            <Button label="Clear Points" onClick={() => setPoints(0)} />
+          </p>
+          <p>
+            <Button
+              label="Edit Username"
+              onClick={() => { setIsusernameSaved(false) }} />
+          </p>
+        </>
+      ) : (
+        <p>
+          <input
+            id="username"
+            onChange={e => setUsername(e.target.value)}
+            placeholder="Username"
+            value={username}
+          />
+          <Button
+            label="Save Username"
+            onClick={() => {
+              setIsusernameSaved(true);
+            }} />
+        </p>
+      )}
+    </>
+  );
 }
 
 
