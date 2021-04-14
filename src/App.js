@@ -1,7 +1,5 @@
 import './App.css';
-import Appsus from "./UserPoints";
-
-
+import Counter from "./Practice1";
 
 function App() {
   return (
@@ -9,7 +7,7 @@ function App() {
       <header className="App-header">
         <h1 className="title">React Hooks exercise</h1>
       </header>
-      <Appsus />
+      <Counter />
     </>
   )
 };

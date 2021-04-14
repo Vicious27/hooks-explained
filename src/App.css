@@ -24,6 +24,7 @@ button.button {
   color: rgb(165, 57, 168);
   font-size: 16px;
   border-radius: .50em;
+  margin-bottom: 2px;
 }
 
 input {
@@ -35,11 +36,13 @@ input {
 }
 
 button {
+  display: flex;
   height: 2.2em;
   border-radius: 1em;
-  border:rgb(41, 105, 177) solid .20em;
+  border:rgb(31, 96, 172) solid .12em;
   background-color: rgba(236, 236, 236, 0.884);
   text-align: center;
+  margin: auto;
 }
 
 h1,h2 {
