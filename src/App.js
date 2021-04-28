@@ -1,5 +1,6 @@
 import './App.css';
 import Counter from "./Practice1";
+import Practice2 from "./Practice2";
 
 function App() {
   return (
@@ -7,7 +8,8 @@ function App() {
       <header className="App-header">
         <h1 className="title">React Hooks exercise</h1>
       </header>
-      <Counter />
+      {/* <Counter /> */}
+      <Practice2 />
     </>
   )
 };
