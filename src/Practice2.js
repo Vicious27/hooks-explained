@@ -28,7 +28,7 @@ const Practice2 = () => {
   return (
     <>
       <h1>Scoreboard</h1>
-      <div style={{
+      <div className="scores" style={{
         display: `flex`,
         maxWidth: `300px`,
         justifyContent: `space-between`,

@@ -1,6 +1,6 @@
 import './App.css';
 // import Counter from "./Practice1";
-import Practice2 from "./Practice2";
+// import Practice2 from "./Practice2";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <h1 className="title">React Hooks exercise</h1>
       </header>
       {/* <Counter /> */}
-      <Practice2 />
+      {/* <Practice2 /> */}
     </>
   )
 };
