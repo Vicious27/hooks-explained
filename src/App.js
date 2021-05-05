@@ -1,6 +1,7 @@
 import './App.css';
 // import Counter from "./Practice1";
 // import Practice2 from "./Practice2";
+import Practice3 from "./Practice3";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       </header>
       {/* <Counter /> */}
       {/* <Practice2 /> */}
+      <Practice3 />
     </>
   )
 };
